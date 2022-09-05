@@ -1,0 +1,65 @@
+#include<stdio.h>
+int main(){
+
+int age = 0;
+int pmoney = 0;
+int smoney = 0;
+int number = 0;
+int wmoney = 0;
+int check = 0;
+ 
+
+printf(" ---Welcome to our Lottery Game--- \n");
+printf(" Please enter your age: ");
+scanf("%d",&age);
+
+
+while (age > 18){
+    printf(" Show your money $: ");
+    scanf("%d",&smoney);
+    if (smoney > 4999){
+        printf(" You can play game and this is your show money: $ %d \n", smoney); 
+           
+    }else{
+        printf(" Your show money more than $ 10000");
+        break;
+    }
+    
+    printf(" Enter your money to play Game $: ");
+    scanf("%d",&pmoney);
+    if (pmoney > 999){
+        printf (" Your play money is : $ %d \n", pmoney);
+    }else{
+        printf(" You must use more than $ 1000 each time");
+        break;
+    }
+
+    printf(" Enter your lottery number! : ");
+    scanf("%d",&number);
+
+        switch (number){
+
+            case 99:
+                printf(" Lucky number is %d\n", number);
+                wmoney = pmoney * 10;
+                printf(" You won the lottery game : $ %d\n",(wmoney+ (smoney-pmoney)));
+                break;
+            case 77:
+                printf(" Lucky number is %d\n", number);
+                wmoney = pmoney * 5;
+                printf(" You won the lottery game : $ %d\n",(wmoney+ (smoney-pmoney)));
+                break;    
+            default:
+                printf (" Try Again! \n");
+                printf(" Your money is : $ %d \n",(smoney-pmoney));
+        }
+        printf(" Press 1 to play again!!! : ");
+        scanf("%d",&check);
+        if (check != 1){
+            printf(" Thank you ! See you soon. \n ");
+            break;
+        }           
+}
+
+    return 0;
+}
