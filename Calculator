@@ -1,0 +1,59 @@
+#include "stdio.h"
+
+int funadd(int first, int second);
+int funsub(int first, int second);
+int funmul(int first, int second);
+int fundiv(int first, int second);
+int main (){
+    int a = 0;
+    int firstNumber = 0;
+    int secondNumber = 0;
+    char Operation;
+    int result = 0;
+
+    while (a==NULL){
+        printf(" Welcome to our calculator program:\n");
+        printf(" Enter your operation +: -: *: /:");
+        scanf(" %c", &Operation);
+        printf(" Enter first number :");
+        scanf("%d", &firstNumber);
+        printf(" Enter second number :");
+        scanf("%d", &secondNumber);
+     
+
+        switch (Operation){
+            case '+':                
+                printf(" Result = %d \n", funadd(firstNumber, secondNumber));
+                break;
+            case '-':
+                printf(" Result = %d \n", funsub(firstNumber, secondNumber));
+                break;
+            case '*':
+                printf(" Result = %d \n", funmul(firstNumber, secondNumber));
+                break;
+            case '/':
+                printf(" Result = %d \n", fundiv(firstNumber, secondNumber));
+                break;
+            default:
+                printf(" Invalid operation \n");
+
+        }
+    }
+
+    return 0;
+}
+
+int funadd(int first, int second){
+    int result = first + second;
+    return result;
+}int funsub(int first, int second){
+    int result = first - second;
+    return result;
+}int funmul(int first, int second){
+    int result = first * second;
+    return result; 
+}int fundiv(int first, int second){
+    int result = first / second;
+    return result;       
+}
+
